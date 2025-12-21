@@ -1,0 +1,458 @@
+{
+  "pv": {
+    "name": "MCP Agent Mail Architecture",
+    "version": "1.0.0"
+  },
+  "nodes": [
+    {
+      "id": "mcp_server",
+      "type": "group",
+      "x": 400,
+      "y": 200,
+      "width": 180,
+      "height": 80,
+      "color": "#FF6B6B",
+      "pv": {
+        "nodeType": "mcp_server",
+        "description": "FastMCP HTTP server on port 8765"
+      }
+    },
+    {
+      "id": "sqlite_database",
+      "type": "group",
+      "x": 200,
+      "y": 350,
+      "width": 160,
+      "height": 80,
+      "color": "#4ECDC4",
+      "pv": {
+        "nodeType": "sqlite_database",
+        "description": "SQLite database with FTS5 search"
+      }
+    },
+    {
+      "id": "git_storage",
+      "type": "group",
+      "x": 600,
+      "y": 350,
+      "width": 160,
+      "height": 80,
+      "color": "#45B7D1",
+      "pv": {
+        "nodeType": "git_storage",
+        "description": "Git repository for markdown artifacts"
+      }
+    },
+    {
+      "id": "agent_identity",
+      "type": "group",
+      "x": 100,
+      "y": 200,
+      "width": 140,
+      "height": 80,
+      "color": "#96CEB4",
+      "pv": {
+        "nodeType": "agent_identity",
+        "description": "Agent registration and profile management"
+      }
+    },
+    {
+      "id": "message_router",
+      "type": "group",
+      "x": 400,
+      "y": 50,
+      "width": 160,
+      "height": 80,
+      "color": "#FFEAA7",
+      "pv": {
+        "nodeType": "message_router",
+        "description": "Message delivery with consent enforcement"
+      }
+    },
+    {
+      "id": "web_ui",
+      "type": "group",
+      "x": 700,
+      "y": 200,
+      "width": 160,
+      "height": 80,
+      "color": "#DDA0DD",
+      "pv": {
+        "nodeType": "web_ui",
+        "description": "Server-rendered web interface"
+      }
+    },
+    {
+      "id": "file_reservations",
+      "type": "group",
+      "x": 200,
+      "y": 500,
+      "width": 160,
+      "height": 80,
+      "color": "#FFA07A",
+      "pv": {
+        "nodeType": "file_reservations",
+        "description": "Advisory file lease system"
+      }
+    },
+    {
+      "id": "search_engine",
+      "type": "group",
+      "x": 400,
+      "y": 500,
+      "width": 160,
+      "height": 80,
+      "color": "#87CEEB",
+      "pv": {
+        "nodeType": "search_engine",
+        "description": "Full-text search with boolean queries"
+      }
+    },
+    {
+      "id": "auth_middleware",
+      "type": "group",
+      "x": 100,
+      "y": 50,
+      "width": 140,
+      "height": 80,
+      "color": "#DC143C",
+      "pv": {
+        "nodeType": "auth_middleware",
+        "description": "JWT/Bearer token authentication"
+      }
+    },
+    {
+      "id": "rate_limiter",
+      "type": "group",
+      "x": 250,
+      "y": 50,
+      "width": 120,
+      "height": 80,
+      "color": "#FF8C00",
+      "pv": {
+        "nodeType": "rate_limiter",
+        "description": "Token-bucket API protection"
+      }
+    },
+    {
+      "id": "export_system",
+      "type": "group",
+      "x": 600,
+      "y": 500,
+      "width": 160,
+      "height": 80,
+      "color": "#2E8B57",
+      "pv": {
+        "nodeType": "export_system",
+        "description": "Static bundle generation"
+      }
+    },
+    {
+      "id": "llm_integration",
+      "type": "group",
+      "x": 700,
+      "y": 50,
+      "width": 140,
+      "height": 80,
+      "color": "#FF69B4",
+      "pv": {
+        "nodeType": "llm_integration",
+        "description": "Optional LLM for summaries"
+      }
+    },
+    {
+      "id": "coding_agent",
+      "type": "group",
+      "x": 50,
+      "y": 350,
+      "width": 140,
+      "height": 80,
+      "color": "#32CD32",
+      "pv": {
+        "nodeType": "coding_agent",
+        "description": "External coding agents via MCP"
+      }
+    },
+    {
+      "id": "human_overseer",
+      "type": "group",
+      "x": 850,
+      "y": 350,
+      "width": 140,
+      "height": 80,
+      "color": "#FFD700",
+      "pv": {
+        "nodeType": "human_overseer",
+        "description": "Human operator with special privileges"
+      }
+    },
+    {
+      "id": "product_bus",
+      "type": "group",
+      "x": 400,
+      "y": 650,
+      "width": 160,
+      "height": 80,
+      "color": "#20B2AA",
+      "pv": {
+        "nodeType": "product_bus",
+        "description": "Multi-repo coordination"
+      }
+    },
+    {
+      "id": "beads_integration",
+      "type": "group",
+      "x": 100,
+      "y": 650,
+      "width": 160,
+      "height": 80,
+      "color": "#9370DB",
+      "pv": {
+        "nodeType": "beads_integration",
+        "description": "Task planning system integration"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "agent_to_auth",
+      "fromNode": "coding_agent",
+      "toNode": "auth_middleware",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "Authenticate",
+      "color": "#8B0000",
+      "pv": {
+        "edgeType": "auth_flow"
+      }
+    },
+    {
+      "id": "auth_to_rate_limit",
+      "fromNode": "auth_middleware",
+      "toNode": "rate_limiter",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "Rate limited",
+      "color": "#333333",
+      "pv": {
+        "edgeType": "http_connection"
+      }
+    },
+    {
+      "id": "rate_limit_to_server",
+      "fromNode": "rate_limiter",
+      "toNode": "mcp_server",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "label": "HTTP requests",
+      "color": "#333333",
+      "pv": {
+        "edgeType": "http_connection"
+      }
+    },
+    {
+      "id": "server_to_identity",
+      "fromNode": "mcp_server",
+      "toNode": "agent_identity",
+      "fromSide": "left",
+      "toSide": "right",
+      "label": "Agent lookup",
+      "color": "#008080",
+      "pv": {
+        "edgeType": "data_read"
+      }
+    },
+    {
+      "id": "server_to_router",
+      "fromNode": "mcp_server",
+      "toNode": "message_router",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "label": "Route messages",
+      "color": "#4169E1",
+      "pv": {
+        "edgeType": "message_delivery"
+      }
+    },
+    {
+      "id": "router_consent_check",
+      "fromNode": "message_router",
+      "toNode": "agent_identity",
+      "fromSide": "left",
+      "toSide": "right",
+      "label": "Verify policy",
+      "color": "#8A2BE2",
+      "pv": {
+        "edgeType": "consent_check"
+      }
+    },
+    {
+      "id": "server_to_db_read",
+      "fromNode": "mcp_server",
+      "toNode": "sqlite_database",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "label": "Query data",
+      "color": "#008080",
+      "pv": {
+        "edgeType": "data_read"
+      }
+    },
+    {
+      "id": "server_to_db_write",
+      "fromNode": "mcp_server",
+      "toNode": "sqlite_database",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "label": "Store data",
+      "color": "#DC143C",
+      "pv": {
+        "edgeType": "data_write"
+      }
+    },
+    {
+      "id": "server_to_git",
+      "fromNode": "mcp_server",
+      "toNode": "git_storage",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "label": "Write artifacts",
+      "color": "#008000",
+      "pv": {
+        "edgeType": "git_operations"
+      }
+    },
+    {
+      "id": "server_to_reservations",
+      "fromNode": "mcp_server",
+      "toNode": "file_reservations",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "label": "Check/claim leases",
+      "color": "#FF6347",
+      "pv": {
+        "edgeType": "reservation_signal"
+      }
+    },
+    {
+      "id": "server_to_search",
+      "fromNode": "mcp_server",
+      "toNode": "search_engine",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "label": "Search queries",
+      "color": "#008080",
+      "pv": {
+        "edgeType": "data_read"
+      }
+    },
+    {
+      "id": "server_to_webui",
+      "fromNode": "mcp_server",
+      "toNode": "web_ui",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "Render pages",
+      "color": "#8B008B",
+      "pv": {
+        "edgeType": "web_ui_render"
+      }
+    },
+    {
+      "id": "human_to_webui",
+      "fromNode": "human_overseer",
+      "toNode": "web_ui",
+      "fromSide": "left",
+      "toSide": "right",
+      "label": "Browser access",
+      "color": "#333333",
+      "pv": {
+        "edgeType": "http_connection"
+      }
+    },
+    {
+      "id": "server_to_export",
+      "fromNode": "mcp_server",
+      "toNode": "export_system",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "label": "Generate bundles",
+      "color": "#2E8B57",
+      "pv": {
+        "edgeType": "export_pipeline"
+      }
+    },
+    {
+      "id": "server_to_llm",
+      "fromNode": "mcp_server",
+      "toNode": "llm_integration",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "label": "Summarize threads",
+      "color": "#FF1493",
+      "pv": {
+        "edgeType": "llm_call"
+      }
+    },
+    {
+      "id": "llm_to_router",
+      "fromNode": "llm_integration",
+      "toNode": "message_router",
+      "fromSide": "left",
+      "toSide": "right",
+      "label": "Enhanced discovery",
+      "color": "#DC143C",
+      "pv": {
+        "edgeType": "data_write"
+      }
+    },
+    {
+      "id": "reservations_to_git",
+      "fromNode": "file_reservations",
+      "toNode": "git_storage",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "Audit trail",
+      "color": "#008000",
+      "pv": {
+        "edgeType": "git_operations"
+      }
+    },
+    {
+      "id": "product_bus_integration",
+      "fromNode": "mcp_server",
+      "toNode": "product_bus",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "label": "Cross-repo ops",
+      "color": "#4169E1",
+      "pv": {
+        "edgeType": "message_delivery"
+      }
+    },
+    {
+      "id": "beads_integration_link",
+      "fromNode": "product_bus",
+      "toNode": "beads_integration",
+      "fromSide": "left",
+      "toSide": "right",
+      "label": "Task planning data",
+      "color": "#008080",
+      "pv": {
+        "edgeType": "data_read"
+      }
+    },
+    {
+      "id": "agent_mcp_protocol",
+      "fromNode": "coding_agent",
+      "toNode": "mcp_server",
+      "fromSide": "top",
+      "toSide": "left",
+      "label": "MCP tools/resources",
+      "color": "#0066CC",
+      "pv": {
+        "edgeType": "mcp_protocol"
+      }
+    }
+  ]
+}

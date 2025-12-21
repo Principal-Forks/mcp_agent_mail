@@ -1,0 +1,222 @@
+version: "1.0.0"
+name: "MCP Agent Mail Component Library"
+
+nodeComponents:
+  # Core Server Components
+  mcp_server:
+    description: "FastMCP HTTP server providing MCP tools and resources"
+    tags: ["core", "server"]
+    defaultLabel: "MCP Server"
+    shape: "rectangle"
+    color: "#FF6B6B"
+    size: "medium"
+
+  sqlite_database:
+    description: "SQLite database with FTS5 for search and indexing"
+    tags: ["data", "storage"]
+    defaultLabel: "SQLite Database"
+    shape: "cylinder"
+    color: "#4ECDC4"
+    size: "medium"
+
+  git_storage:
+    description: "Git repository for human-auditable markdown artifacts"
+    tags: ["data", "storage"]
+    defaultLabel: "Git Storage"
+    shape: "rectangle"
+    color: "#45B7D1"
+    size: "medium"
+
+  agent_identity:
+    description: "Agent registration and profile management"
+    tags: ["identity", "service"]
+    defaultLabel: "Agent Identity"
+    shape: "ellipse"
+    color: "#96CEB4"
+    size: "small"
+
+  message_router:
+    description: "Message delivery and routing with consent enforcement"
+    tags: ["messaging", "service"]
+    defaultLabel: "Message Router"
+    shape: "diamond"
+    color: "#FFEAA7"
+    size: "medium"
+
+  web_ui:
+    description: "Server-rendered web interface for human oversight"
+    tags: ["ui", "interface"]
+    defaultLabel: "Web UI"
+    shape: "rectangle"
+    color: "#DDA0DD"
+    size: "large"
+
+  file_reservations:
+    description: "Advisory file lease system for conflict avoidance"
+    tags: ["coordination", "service"]
+    defaultLabel: "File Reservations"
+    shape: "hexagon"
+    color: "#FFA07A"
+    size: "medium"
+
+  search_engine:
+    description: "Full-text search with FTS5 and boolean queries"
+    tags: ["search", "service"]
+    defaultLabel: "Search Engine"
+    shape: "cylinder"
+    color: "#87CEEB"
+    size: "medium"
+
+  auth_middleware:
+    description: "JWT/Bearer token authentication and RBAC"
+    tags: ["security", "auth"]
+    defaultLabel: "Auth Middleware"
+    shape: "rectangle"
+    color: "#DC143C"
+    size: "small"
+
+  rate_limiter:
+    description: "Token-bucket rate limiting for API protection"
+    tags: ["security", "performance"]
+    defaultLabel: "Rate Limiter"
+    shape: "rectangle"
+    color: "#FF8C00"
+    size: "small"
+
+  export_system:
+    description: "Static bundle generation for secure distribution"
+    tags: ["export", "service"]
+    defaultLabel: "Export System"
+    shape: "rectangle"
+    color: "#2E8B57"
+    size: "medium"
+
+  llm_integration:
+    description: "Optional LLM for thread summaries and discovery"
+    tags: ["ai", "integration"]
+    defaultLabel: "LLM Integration"
+    shape: "cloud"
+    color: "#FF69B4"
+    size: "medium"
+
+  coding_agent:
+    description: "External coding agents using MCP tools"
+    tags: ["external", "actor"]
+    defaultLabel: "Coding Agent"
+    shape: "person"
+    color: "#32CD32"
+    size: "small"
+
+  human_overseer:
+    description: "Human operator with message composition capabilities"
+    tags: ["human", "actor"]
+    defaultLabel: "Human Overseer"
+    shape: "person"
+    color: "#FFD700"
+    size: "small"
+
+  product_bus:
+    description: "Multi-repo product-wide coordination"
+    tags: ["coordination", "service"]
+    defaultLabel: "Product Bus"
+    shape: "rectangle"
+    color: "#20B2AA"
+    size: "large"
+
+  beads_integration:
+    description: "Beads task planning system integration"
+    tags: ["external", "integration"]
+    defaultLabel: "Beads Integration"
+    shape: "rectangle"
+    color: "#9370DB"
+    size: "medium"
+
+edgeComponents:
+  # API & Protocol
+  http_connection:
+    description: "HTTP-based API communication"
+    tags: ["api", "protocol"]
+    style: "solid"
+    color: "#333333"
+    width: 2
+
+  mcp_protocol:
+    description: "MCP tool and resource calls"
+    tags: ["protocol", "mcp"]
+    style: "dashed"
+    color: "#0066CC"
+    width: 2
+
+  # Data Flow
+  data_read:
+    description: "Database read operations"
+    tags: ["data", "read"]
+    style: "solid"
+    color: "#008080"
+    width: 2
+
+  data_write:
+    description: "Database write operations"
+    tags: ["data", "write"]
+    style: "solid"
+    color: "#DC143C"
+    width: 2
+
+  git_operations:
+    description: "Git repository operations"
+    tags: ["data", "git"]
+    style: "solid"
+    color: "#008000"
+    width: 2
+
+  # Security & Policy
+  auth_flow:
+    description: "Authentication and authorization"
+    tags: ["security", "auth"]
+    style: "solid"
+    color: "#8B0000"
+    width: 2
+
+  consent_check:
+    description: "Contact policy verification"
+    tags: ["policy", "security"]
+    style: "dashed"
+    color: "#8A2BE2"
+    width: 1
+
+  # Communication
+  message_delivery:
+    description: "Message routing and delivery"
+    tags: ["messaging", "delivery"]
+    style: "solid"
+    color: "#4169E1"
+    width: 2
+
+  reservation_signal:
+    description: "File reservation and conflict signals"
+    tags: ["coordination", "signals"]
+    style: "dashed"
+    color: "#FF6347"
+    width: 2
+
+  # Integration
+  llm_call:
+    description: "LLM API calls for summarization"
+    tags: ["ai", "integration"]
+    style: "dotted"
+    color: "#FF1493"
+    width: 1
+
+  export_pipeline:
+    description: "Data export and processing pipeline"
+    tags: ["export", "pipeline"]
+    style: "solid"
+    color: "#2E8B57"
+    width: 2
+
+  web_ui_render:
+    description: "Web UI rendering and user interaction"
+    tags: ["ui", "rendering"]
+    style: "solid"
+    color: "#8B008B"
+    width: 2
