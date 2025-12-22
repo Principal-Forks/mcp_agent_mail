@@ -6,7 +6,7 @@
   "nodes": [
     {
       "id": "mcp_server",
-      "type": "group",
+      "type": "rectangle",
       "x": 400,
       "y": 200,
       "width": 180,
@@ -20,7 +20,7 @@
     },
     {
       "id": "sqlite_database",
-      "type": "group",
+      "type": "rectangle",
       "x": 200,
       "y": 350,
       "width": 160,
@@ -34,7 +34,7 @@
     },
     {
       "id": "git_storage",
-      "type": "group",
+      "type": "rectangle",
       "x": 600,
       "y": 350,
       "width": 160,
@@ -48,7 +48,7 @@
     },
     {
       "id": "agent_identity",
-      "type": "group",
+      "type": "circle",
       "x": 100,
       "y": 200,
       "width": 140,
@@ -62,7 +62,7 @@
     },
     {
       "id": "message_router",
-      "type": "group",
+      "type": "diamond",
       "x": 400,
       "y": 50,
       "width": 160,
@@ -76,7 +76,7 @@
     },
     {
       "id": "web_ui",
-      "type": "group",
+      "type": "rectangle",
       "x": 700,
       "y": 200,
       "width": 160,
@@ -90,7 +90,7 @@
     },
     {
       "id": "file_reservations",
-      "type": "group",
+      "type": "hexagon",
       "x": 200,
       "y": 500,
       "width": 160,
@@ -104,7 +104,7 @@
     },
     {
       "id": "search_engine",
-      "type": "group",
+      "type": "rectangle",
       "x": 400,
       "y": 500,
       "width": 160,
@@ -118,7 +118,7 @@
     },
     {
       "id": "auth_middleware",
-      "type": "group",
+      "type": "rectangle",
       "x": 100,
       "y": 50,
       "width": 140,
@@ -132,7 +132,7 @@
     },
     {
       "id": "rate_limiter",
-      "type": "group",
+      "type": "rectangle",
       "x": 250,
       "y": 50,
       "width": 120,
@@ -146,7 +146,7 @@
     },
     {
       "id": "export_system",
-      "type": "group",
+      "type": "rectangle",
       "x": 600,
       "y": 500,
       "width": 160,
@@ -160,7 +160,7 @@
     },
     {
       "id": "llm_integration",
-      "type": "group",
+      "type": "rectangle",
       "x": 700,
       "y": 50,
       "width": 140,
@@ -174,7 +174,7 @@
     },
     {
       "id": "coding_agent",
-      "type": "group",
+      "type": "circle",
       "x": 50,
       "y": 350,
       "width": 140,
@@ -188,7 +188,7 @@
     },
     {
       "id": "human_overseer",
-      "type": "group",
+      "type": "circle",
       "x": 850,
       "y": 350,
       "width": 140,
@@ -202,7 +202,7 @@
     },
     {
       "id": "product_bus",
-      "type": "group",
+      "type": "rectangle",
       "x": 400,
       "y": 650,
       "width": 160,
@@ -216,7 +216,7 @@
     },
     {
       "id": "beads_integration",
-      "type": "group",
+      "type": "rectangle",
       "x": 100,
       "y": 650,
       "width": 160,
