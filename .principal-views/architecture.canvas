@@ -14,6 +14,7 @@
       "color": "#FF6B6B",
       "pv": {
         "nodeType": "mcp_server",
+        "shape": "rectangle",
         "description": "FastMCP HTTP server on port 8765"
       }
     },
@@ -27,6 +28,7 @@
       "color": "#4ECDC4",
       "pv": {
         "nodeType": "sqlite_database",
+        "shape": "rectangle",
         "description": "SQLite database with FTS5 search"
       }
     },
@@ -40,6 +42,7 @@
       "color": "#45B7D1",
       "pv": {
         "nodeType": "git_storage",
+        "shape": "rectangle",
         "description": "Git repository for markdown artifacts"
       }
     },
@@ -53,6 +56,7 @@
       "color": "#96CEB4",
       "pv": {
         "nodeType": "agent_identity",
+        "shape": "circle",
         "description": "Agent registration and profile management"
       }
     },
@@ -66,6 +70,7 @@
       "color": "#FFEAA7",
       "pv": {
         "nodeType": "message_router",
+        "shape": "diamond",
         "description": "Message delivery with consent enforcement"
       }
     },
@@ -79,6 +84,7 @@
       "color": "#DDA0DD",
       "pv": {
         "nodeType": "web_ui",
+        "shape": "rectangle",
         "description": "Server-rendered web interface"
       }
     },
@@ -92,6 +98,7 @@
       "color": "#FFA07A",
       "pv": {
         "nodeType": "file_reservations",
+        "shape": "hexagon",
         "description": "Advisory file lease system"
       }
     },
@@ -105,6 +112,7 @@
       "color": "#87CEEB",
       "pv": {
         "nodeType": "search_engine",
+        "shape": "rectangle",
         "description": "Full-text search with boolean queries"
       }
     },
@@ -118,6 +126,7 @@
       "color": "#DC143C",
       "pv": {
         "nodeType": "auth_middleware",
+        "shape": "rectangle",
         "description": "JWT/Bearer token authentication"
       }
     },
@@ -131,6 +140,7 @@
       "color": "#FF8C00",
       "pv": {
         "nodeType": "rate_limiter",
+        "shape": "rectangle",
         "description": "Token-bucket API protection"
       }
     },
@@ -144,6 +154,7 @@
       "color": "#2E8B57",
       "pv": {
         "nodeType": "export_system",
+        "shape": "rectangle",
         "description": "Static bundle generation"
       }
     },
@@ -157,6 +168,7 @@
       "color": "#FF69B4",
       "pv": {
         "nodeType": "llm_integration",
+        "shape": "rectangle",
         "description": "Optional LLM for summaries"
       }
     },
@@ -170,6 +182,7 @@
       "color": "#32CD32",
       "pv": {
         "nodeType": "coding_agent",
+        "shape": "circle",
         "description": "External coding agents via MCP"
       }
     },
@@ -183,6 +196,7 @@
       "color": "#FFD700",
       "pv": {
         "nodeType": "human_overseer",
+        "shape": "circle",
         "description": "Human operator with special privileges"
       }
     },
@@ -196,6 +210,7 @@
       "color": "#20B2AA",
       "pv": {
         "nodeType": "product_bus",
+        "shape": "rectangle",
         "description": "Multi-repo coordination"
       }
     },
@@ -209,6 +224,7 @@
       "color": "#9370DB",
       "pv": {
         "nodeType": "beads_integration",
+        "shape": "rectangle",
         "description": "Task planning system integration"
       }
     }
