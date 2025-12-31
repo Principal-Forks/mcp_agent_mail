@@ -249,7 +249,7 @@
       "fromSide": "right",
       "toSide": "left",
       "label": "Rate limited",
-      "color": "#333333",
+      "color": "#B0B0B0",
       "pv": {
         "edgeType": "http_connection"
       }
@@ -261,7 +261,7 @@
       "fromSide": "bottom",
       "toSide": "top",
       "label": "HTTP requests",
-      "color": "#333333",
+      "color": "#B0B0B0",
       "pv": {
         "edgeType": "http_connection"
       }
@@ -381,7 +381,7 @@
       "fromSide": "left",
       "toSide": "right",
       "label": "Browser access",
-      "color": "#333333",
+      "color": "#B0B0B0",
       "pv": {
         "edgeType": "http_connection"
       }

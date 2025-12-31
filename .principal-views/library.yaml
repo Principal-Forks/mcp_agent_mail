@@ -137,7 +137,7 @@ edgeComponents:
     description: "HTTP-based API communication"
     tags: ["api", "protocol"]
     style: "solid"
-    color: "#333333"
+    color: "#B0B0B0"
     width: 2
 
   mcp_protocol:
